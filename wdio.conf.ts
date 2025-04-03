@@ -55,6 +55,9 @@ export const config: WebdriverIO.Config = {
   capabilities: [
     {
       browserName: "chrome",
+      'goog:chromeOptions': {
+      args: ['--disable-blink-features=BiDiCDPMapper']
+    }
     },
   ],
 
@@ -210,11 +213,7 @@ export const config: WebdriverIO.Config = {
    * @param {Array.<String>} specs        List of spec file paths that are to be run
    * @param {object}         browser      instance of created browser/device session
    */
-  before: async function () {
-    await browser.execute(() => {
-      Object.defineProperty(navigator, 'webdriver', { get: () => false });
-    });
-  }
+  
   // before: function (capabilities, specs) {
   // },
   /**
