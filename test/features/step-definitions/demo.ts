@@ -16,11 +16,16 @@ When(/^Write (.*) and (.*)$/, async function (username, password) {
 });
 
 Then(/^Click on the button submit$/, async function () {
-  let buttonSubmit = await $(`[type="submit"]`);
+  let buttonSubmit = $(`[type="submit"]`);
   await buttonSubmit.click();
 });
 
 
 Then(/^URL should match (.*)/, async function (expectedURL) {
   await expect(browser).toHaveUrl(expectedURL);
+})
+
+Then(/^Message should match (.*)/, async function (expectedMessage) {
+  let message = $(`[data-test="error"]`);
+  await expect(message).toHaveText(expectedMessage)
 })
