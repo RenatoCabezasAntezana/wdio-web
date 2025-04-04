@@ -4,8 +4,6 @@ Feature: Web Interactions
     Scenario Outline: Demo Web Interactions
         Given A web page is opened
         When Perform web interactions
+        Then Windows handling manage
 
-        Examples:
-            | TestID     |
-            | WEB_TC002 |
 
