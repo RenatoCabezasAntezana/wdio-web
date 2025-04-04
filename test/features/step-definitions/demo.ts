@@ -8,6 +8,8 @@ Given(/^SwagLabs login page is opened$/, async function () {
 
 When(/^Write (.*) and (.*)$/, async function (username, password) {
 
+  console.log(`Prueba de que el .env funciona :${process.env.TEST_USERNAME}`)
+
   let inputUsername = $(`[name="user-name"]`)
   let inputPassword = $(`[name="password"]`)
 
@@ -81,5 +83,5 @@ Then(/^Windows handling manage$/, async function () {
   console.log(`>> parentWinHeaderTxt: ${parentWinHeaderTxt}`)
   //Continue with rest of the execution
 
-  
+
 })
