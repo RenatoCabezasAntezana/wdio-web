@@ -1,14 +1,14 @@
 Feature: Demo feature
 
     Login Successfull and unsuccessfull
-    @demo
+    @demo1
     Scenario Outline: Login Successfull
         Given SwagLabs login page is opened
         When Write standard_user and secret_sauce
         Then Click on the button submit
         Then URL should match https://www.saucedemo.com/v1/inventory.html
 
-    @demo
+    @demo1
     Scenario Outline: Login Unsuccessfull
         Given SwagLabs login page is opened
         When Write <username> and <password>
