@@ -5,7 +5,9 @@
     "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "wdio": "wdio run wdio.conf.ts"
+        "wdio": "wdio run wdio.conf.ts",
+        "wdio-test": "npx wdio wdio.conf.ts --cucumberOpts.tagExpression = '@demo'",
+        "smoke": "npx wdio wdio.conf.ts --cucumberOpts.tagExpression='@smoke'"
     },
     "author": "",
     "license": "ISC",
@@ -20,6 +22,7 @@
         "chromedriver": "^135.0.0"
     },
     "dependencies": {
+        "dotenv": "^16.4.7",
         "typescript": "^5.8.2"
     }
 }

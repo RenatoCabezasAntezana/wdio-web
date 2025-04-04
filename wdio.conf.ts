@@ -1,3 +1,5 @@
+import dotenv from "dotenv"
+dotenv.config()
 export const config: WebdriverIO.Config = {
   //
   // ====================
@@ -54,9 +56,10 @@ export const config: WebdriverIO.Config = {
   //
   capabilities: [
     {
+      maxInstances: 5,
       browserName: "chrome",
       'goog:chromeOptions': {
-        args: ['--disable-blink-features=BiDiCDPMapper']
+        args: ['--disable-blink-features=BiDiCDPMapper', '--disable-web-security', '--headless']
       }
     },
   ],
@@ -154,7 +157,7 @@ export const config: WebdriverIO.Config = {
     // <boolean> fail if there are any undefined or pending steps
     strict: false,
     // <string> (expression) only execute the features or scenarios with tags matching the expression
-    tagExpression: "@demo",
+    tagExpression: "@renato",
     // <number> timeout for step definitions
     timeout: 60000,
     // <boolean> Enable this config to treat undefined definitions as warnings.
