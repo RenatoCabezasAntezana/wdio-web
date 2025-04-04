@@ -56,8 +56,8 @@ export const config: WebdriverIO.Config = {
     {
       browserName: "chrome",
       'goog:chromeOptions': {
-      args: ['--disable-blink-features=BiDiCDPMapper']
-    }
+        args: ['--disable-blink-features=BiDiCDPMapper']
+      }
     },
   ],
 
@@ -92,7 +92,7 @@ export const config: WebdriverIO.Config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  // baseUrl: 'http://localhost:8080',
+  baseUrl: 'https://the-internet.herokuapp.com/',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
@@ -213,7 +213,7 @@ export const config: WebdriverIO.Config = {
    * @param {Array.<String>} specs        List of spec file paths that are to be run
    * @param {object}         browser      instance of created browser/device session
    */
-  
+
   // before: function (capabilities, specs) {
   // },
   /**

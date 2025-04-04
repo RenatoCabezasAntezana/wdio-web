@@ -8,8 +8,8 @@ Given(/^SwagLabs login page is opened$/, async function () {
 
 When(/^Write (.*) and (.*)$/, async function (username, password) {
 
-  let inputUsername = await $(`[name="user-name"]`)
-  let inputPassword = await $(`[name="password"]`)
+  let inputUsername = $(`[name="user-name"]`)
+  let inputPassword = $(`[name="password"]`)
 
   await inputUsername.setValue(username);
   await inputPassword.setValue(password);
@@ -28,4 +28,8 @@ Then(/^URL should match (.*)/, async function (expectedURL) {
 Then(/^Message should match (.*)/, async function (expectedMessage) {
   let message = $(`[data-test="error"]`);
   await expect(message).toHaveText(expectedMessage)
+})
+
+Given(/^A web page is opened$/, async function () {
+
 })
